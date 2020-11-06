@@ -5,5 +5,15 @@
 
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  <p>Project created: {{ .Date }}</p>
+  <p>Last updated: {{.Lastmod }}</p>
+  <p><a href="{{ .Params.website }}" target="_blank">Website</a></p>
+  {{ with .Params.topics }}
+    <ul>
+      {{ range . }}
+        <li><a href="/topics/{{ . }}">{{ . }}</a></li>
+      {{ end }}
+  </ul>
+  {{ end }}
   {{ .Content }}
 {{ end }}
