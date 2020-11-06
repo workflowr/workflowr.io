@@ -5,8 +5,8 @@
   <h2>Projects</h2>
   {{ range .Site.RegularPages }}
   <article>
-    <h3>{{ .Title }}</h3>
-    {{ .Content }}
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ .Description }}
   </article>
   {{ end }}
 {{ end }}
