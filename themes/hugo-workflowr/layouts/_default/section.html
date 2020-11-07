@@ -2,4 +2,11 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   <p>{{ .Content }}</p>
+  <ul>
+  {{ range .CurrentSection.RegularPagesRecursive }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+  </ul>
 {{ end }}

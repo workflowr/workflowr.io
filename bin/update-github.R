@@ -68,12 +68,38 @@ for (i in seq_along(projects)) {
 # Export projects -------------------------------------------------------------
 
 dirContent <- "content/projects"
+dirGitHub <- file.path(dirContent, "github")
+dir.create(dirGitHub, showWarnings = FALSE, recursive = TRUE)
+sectionFileGitHub <- file.path(dirGitHub, "_index.md")
+writeLines(c("---",
+             "title: GitHub",
+             "---",
+             "",
+             "Workflowr projects hosted on GitHub.",
+             ""),
+           con = sectionFileGitHub)
 
 for (i in seq_along(output)) {
-  dirExport <- file.path(dirContent, "github", output[[i]]$account, output[[i]]$title)
-  dir.create(dirExport, showWarnings = FALSE, recursive = TRUE)
-  fileExport <- file.path(dirExport, "index.md")
-  con <- file(fileExport, "w")
+  dirAccount <- file.path(dirContent, "github", output[[i]]$account)
+  dir.create(dirAccount, showWarnings = FALSE, recursive = TRUE)
+  fileAccount <- file.path(dirAccount, "_index.md")
+  writeLines(c("---",
+               sprintf("title: %s", output[[i]]$account),
+               "---",
+               "",
+               sprintf("Workflowr projects by %s", output[[i]]$account),
+               ""),
+               con = fileAccount)
+  # con <- file(fileAccount, "w")
+  # cat("---\n", file = con)
+  # yaml::write_yaml(output[[i]], file = con)
+  # cat("---\n\n", file = con, append = TRUE)
+  # close(con)
+
+  dirProject <- file.path(dirContent, "github", output[[i]]$account, output[[i]]$title)
+  dir.create(dirProject, showWarnings = FALSE, recursive = TRUE)
+  fileProject <- file.path(dirProject, "index.md")
+  con <- file(fileProject, "w")
   cat("---\n", file = con)
   yaml::write_yaml(output[[i]], file = con)
   cat("---\n\n", file = con, append = TRUE)
