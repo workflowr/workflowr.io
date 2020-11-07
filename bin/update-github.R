@@ -26,11 +26,19 @@ if (rate$rate$remaining < 100) {
 
 # To do: Download list of GitHub repositories that have GitHub App installed
 
-projects <- list(
-  list(owner = "jdblischak", repo = "fucci-seq"),
-  list(owner = "jdblischak", repo = "singlecell-qtl"),
-  list(owner = "stephenslab", repo = "wflow-divvy")
-)
+users <- c("jdblischak", "pcarbo", "stephens999", "stephenslab")
+results <- list()
+for (user in users) {
+  query <- sprintf("filename%%3A_workflowr.yml+user%%3A%s", user)
+  search <- gh::gh(paste0("/search/code?q=", query))
+  results <- c(results, search$items)
+}
+
+projects <- vector(mode = "list", length = length(results))
+for (i in seq_along(results)) {
+  projects[[i]] <- list(owner = results[[i]]$repository$owner$login,
+                        repo = results[[i]]$repository$name)
+}
 
 # Gather project information --------------------------------------------------
 
@@ -43,11 +51,14 @@ for (i in seq_along(projects)) {
   topics <- gh::gh("/repos/:owner/:repo/topics", owner = p$owner, repo = p$repo,
                    .accept = "application/vnd.github.mercy-preview+json")
   if (length(topics$names) > 0) {
-    topics <- unlist(topics$names)
+    topics <- topics$names
   } else {
-    topics <- character()
+    topics <- list()
   }
-  pages <- gh::gh("/repos/:owner/:repo/pages", owner = p$owner, repo = p$repo)
+  pages <- tryCatch(
+    gh::gh("/repos/:owner/:repo/pages", owner = p$owner, repo = p$repo),
+    error = function(e) list()
+  )
 
   output[[i]] <- list(
     # Default Hugo page variables
@@ -90,11 +101,6 @@ for (i in seq_along(output)) {
                sprintf("Workflowr projects by %s", output[[i]]$account),
                ""),
                con = fileAccount)
-  # con <- file(fileAccount, "w")
-  # cat("---\n", file = con)
-  # yaml::write_yaml(output[[i]], file = con)
-  # cat("---\n\n", file = con, append = TRUE)
-  # close(con)
 
   dirProject <- file.path(dirContent, "github", output[[i]]$account, output[[i]]$title)
   dir.create(dirProject, showWarnings = FALSE, recursive = TRUE)
