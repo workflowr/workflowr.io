@@ -5,3 +5,15 @@ theme: hugo-workflowr
 taxonomies:
   topic: topics
 Paginate: 5
+
+# Related content
+# https://gohugo.io/content-management/related/#default-configuration
+related:
+  includeNewer: true
+  indices:
+  - name: topics
+    weight: 100
+  - name: date
+    weight: 10
+  threshold: 80
+  toLower: true
