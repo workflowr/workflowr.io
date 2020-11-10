@@ -4,6 +4,7 @@
 {{ end }}
 
 {{ define "main" }}
+  {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
   <p>Project created: {{ .Date }}</p>
   <p>Last updated: {{.Lastmod }}</p>
@@ -17,5 +18,4 @@
   {{ end }}
   {{ .Content }}
   {{ partial "related.html" . }}
-  {{ partial "breadcrumb.html" . }}
 {{ end }}

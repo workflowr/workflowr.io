@@ -1,5 +1,6 @@
 
 {{ define "main" }}
+  {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
   <ul>
   {{ range .Paginator.Pages }}
