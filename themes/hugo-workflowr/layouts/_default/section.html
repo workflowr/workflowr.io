@@ -3,11 +3,12 @@
   <h1>{{ .Title }}</h1>
   <p>{{ .Content }}</p>
   <ul>
-  {{ range .CurrentSection.RegularPagesRecursive }}
+  {{ range (.Paginate .CurrentSection.RegularPagesRecursive).Pages }}
     <li>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </li>
   {{ end }}
   </ul>
+  {{ template "_internal/pagination.html" . }}
   {{ partial "breadcrumb.html" . }}
 {{ end }}

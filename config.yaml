@@ -4,4 +4,4 @@ title: workflowr.io
 theme: hugo-workflowr
 taxonomies:
   topic: topics
-
+Paginate: 5
