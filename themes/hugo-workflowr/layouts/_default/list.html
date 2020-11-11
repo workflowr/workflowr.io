@@ -2,12 +2,17 @@
 {{ define "main" }}
   {{ partial "breadcrumb.html" . }}
   <h1  class="title is-1">{{ .Title }}</h1>
-  <ul>
+
+  <div class="field is-grouped is-grouped-multiline">
   {{ range .Paginator.Pages }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </li>
+    <div class="control">
+      <div class="tags has-addons">
+        <a class="tag is-link is-large" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <!-- For when I can figure out how to include the count of projects with a given topic -->
+        <!-- <a class="tag">5</a> -->
+      </div>
+    </div>
   {{ end }}
-  </ul>
+  </div>
   {{ partial "pagination.html" . }}
 {{ end }}

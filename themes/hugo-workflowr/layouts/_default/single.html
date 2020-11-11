@@ -10,11 +10,15 @@
   <p>Last updated: {{.Lastmod }}</p>
   <p><a href="{{ .Params.website }}" target="_blank">Website</a></p>
   {{ with .Params.topics }}
-    <ul>
+    <div class="field is-grouped is-grouped-multiline">
       {{ range . }}
-        <li><a href="/topics/{{ . }}">{{ . }}</a></li>
+      <div class="control">
+        <div class="tags has-addons">
+          <a class="tag is-link is-medium" href="/topics/{{ . }}">{{ . }}</a>
+        </div>
+      </div>
       {{ end }}
-  </ul>
+    </div>
   {{ end }}
   {{ .Content }}
   {{ partial "related.html" . }}
