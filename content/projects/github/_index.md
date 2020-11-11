@@ -2,5 +2,5 @@
 title: GitHub
 ---
 
-Workflowr projects hosted on GitHub.
+Workflowr projects hosted on GitHub
 

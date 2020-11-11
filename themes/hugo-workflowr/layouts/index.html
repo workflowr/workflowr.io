@@ -1,6 +1,6 @@
 
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <h1 class="title is-1">{{ .Title }}</h1>
   {{ .Content }}
   <h2>Projects</h2>
   {{ range (.Paginate .Site.RegularPages).Pages }}
