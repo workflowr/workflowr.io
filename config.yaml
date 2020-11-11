@@ -9,11 +9,17 @@ Paginate: 10
 # Related content
 # https://gohugo.io/content-management/related/#default-configuration
 related:
+  threshold: 50
   includeNewer: true
+  toLower: true
   indices:
   - name: topics
     weight: 100
+  - name: title
+    weight: 50
+  - name: description
+    weight: 50
+  - name: account
+    weight: 25
   - name: date
-    weight: 10
-  threshold: 80
-  toLower: true
+    weight: 25
