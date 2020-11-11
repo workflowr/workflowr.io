@@ -1,0 +1,9 @@
+
+{{ define "main" }}
+  {{ partial "breadcrumb.html" . }}
+  <h1 class="title is-1">Projects with the topic {{ .Title }}</h1>
+  {{ range (.Paginate .Data.Pages).Pages }}
+    {{ .Render "summary" }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+{{ end }}
