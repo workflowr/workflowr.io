@@ -29,7 +29,7 @@ if (rate$rate$remaining < 100) {
 users <- c("jdblischak", "pcarbo", "stephens999", "stephenslab")
 results <- list()
 for (user in users) {
-  query <- sprintf("filename%%3A_workflowr.yml+user%%3A%s", user)
+  query <- sprintf("filename%%3A_workflowr.yml+user%%3A%s&per_page=100", user)
   search <- gh::gh(paste0("/search/code?q=", query))
   results <- c(results, search$items)
 }
@@ -39,6 +39,10 @@ for (i in seq_along(results)) {
   projects[[i]] <- list(owner = results[[i]]$repository$owner$login,
                         repo = results[[i]]$repository$name)
 }
+
+# Remove the workflowr repository itself. It contains _workflowr.yml in the
+# tests directory
+projects <- Filter(function(x) x[["repo"]] != "workflowr", projects)
 
 # Gather project information --------------------------------------------------
 
@@ -80,13 +84,15 @@ for (i in seq_along(projects)) {
 
 dirContent <- "content/projects"
 dirGitHub <- file.path(dirContent, "github")
+# To do: Remove previous content. For some reason it is deleting singlecell-qtl.
+# unlink(dirGitHub, recursive = TRUE)
 dir.create(dirGitHub, showWarnings = FALSE, recursive = TRUE)
 sectionFileGitHub <- file.path(dirGitHub, "_index.md")
 writeLines(c("---",
              "title: GitHub",
              "---",
              "",
-             "Workflowr projects hosted on GitHub.",
+             "Workflowr projects hosted on GitHub",
              ""),
            con = sectionFileGitHub)
 

@@ -3,12 +3,8 @@
   {{ partial "breadcrumb.html" . }}
   <h1 class="title is-1">{{ .Title }}</h1>
   <p class="subtitle is-4">{{ .Content }}</p>
-  <ul>
   {{ range (.Paginate .CurrentSection.RegularPagesRecursive).Pages }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </li>
+    {{ .Render "summary" }}
   {{ end }}
-  </ul>
   {{ partial "pagination.html" . }}
 {{ end }}
