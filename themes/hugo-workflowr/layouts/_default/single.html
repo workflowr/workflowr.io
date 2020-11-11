@@ -4,12 +4,15 @@
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 
+{{ define "hero" }}
+  {{- partial "hero.html" . -}}
+{{ end }}
+
 {{ define "main" }}
   {{ partial "breadcrumb.html" . }}
-  <h1 class="title is-1">{{ .Title }}</h1>
-  <p>Project created: {{ .Date }}</p>
-  <p>Last updated: {{.Lastmod }}</p>
-  <p><a href="{{ .Params.website }}" target="_blank">Website</a></p>
+  <p class="content">Project created: {{ .Date }}</p>
+  <p class="content">Last updated: {{.Lastmod }}</p>
+  <p class="content"><a href="{{ .Params.website }}" target="_blank">Website</a></p>
   {{ with .Params.topics }}
     <div class="field is-grouped is-grouped-multiline">
       {{ range . }}

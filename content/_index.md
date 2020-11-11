@@ -1,7 +1,4 @@
 ---
 title: workflowr
+description: Discover reproducible research projects 
 ---
-
-## Discover reproducible research projects
-
-Explore the projects below.

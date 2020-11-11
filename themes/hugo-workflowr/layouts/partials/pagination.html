@@ -1,6 +1,6 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 -}}
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+<nav class="pagination is-centered m-6" role="navigation" aria-label="pagination">
   <a class="pagination-previous" aria-label="Previous" {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }}  {{ if not $pag.HasPrev }}title="This is the first page" disabled{{ end }}>Previous</a>
   <a class="pagination-next" aria-label="Next" {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} {{ if not $pag.HasNext }} title="This is the last page" disabled{{ end }}>Next page</a>
   <ul class="pagination-list">

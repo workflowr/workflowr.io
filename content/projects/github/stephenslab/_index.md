@@ -1,6 +1,5 @@
 ---
 title: stephenslab
+description: Workflowr projects by stephenslab
 ---
-
-Workflowr projects by stephenslab
 

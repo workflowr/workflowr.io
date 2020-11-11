@@ -64,11 +64,18 @@ for (i in seq_along(projects)) {
     error = function(e) list()
   )
 
+  if (is.null(repository$description)) {
+    description <- sprintf("The workflowr project %s by %s",
+                           repository$name, repository$owner$login)
+  } else {
+    description <- repository$description
+  }
+
   output[[i]] <- list(
     # Default Hugo page variables
     # https://gohugo.io/content-management/front-matter/#predefined
     date = repository$created_at,
-    description = repository$description,
+    description = description,
     lastmod = repository$pushed_at,
     title = repository$name,
     # Taxonomies
@@ -84,15 +91,13 @@ for (i in seq_along(projects)) {
 
 dirContent <- "content/projects"
 dirGitHub <- file.path(dirContent, "github")
-# To do: Remove previous content. For some reason it is deleting singlecell-qtl.
-# unlink(dirGitHub, recursive = TRUE)
+unlink(dirGitHub, recursive = TRUE)
 dir.create(dirGitHub, showWarnings = FALSE, recursive = TRUE)
 sectionFileGitHub <- file.path(dirGitHub, "_index.md")
 writeLines(c("---",
              "title: GitHub",
+             "description: Workflowr projects hosted on GitHub",
              "---",
-             "",
-             "Workflowr projects hosted on GitHub",
              ""),
            con = sectionFileGitHub)
 
@@ -102,9 +107,8 @@ for (i in seq_along(output)) {
   fileAccount <- file.path(dirAccount, "_index.md")
   writeLines(c("---",
                sprintf("title: %s", output[[i]]$account),
+               sprintf("description: Workflowr projects by %s", output[[i]]$account),
                "---",
-               "",
-               sprintf("Workflowr projects by %s", output[[i]]$account),
                ""),
                con = fileAccount)
 

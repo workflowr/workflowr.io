@@ -12,6 +12,8 @@
 {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
 {{ end }}
 <li{{ if eq .p1 .p2 }} class="is-active"{{ end }}>
-  <a href="{{ .p1.RelPermalink }}" aria-current="page">{{ .p1.Title }}</a>
+  <a href="{{ .p1.RelPermalink }}" aria-current="page">
+    {{ if .p1.IsHome }} Home {{ else }} {{ .p1.Title }} {{ end }}
+  </a>
 </li>
 {{ end }}

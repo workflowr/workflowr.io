@@ -1,8 +1,9 @@
 
+{{ define "hero" }}
+  {{- partial "hero.html" . -}}
+{{ end }}
+
 {{ define "main" }}
-  <h1 class="title is-1">{{ .Title }}</h1>
-  {{ .Content }}
-  <h2 class="title is-2">Projects</h2>
   {{ range (.Paginate .Site.RegularPages).Pages }}
     {{ .Render "summary" }}
   {{ end }}

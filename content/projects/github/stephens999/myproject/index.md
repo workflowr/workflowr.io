@@ -1,6 +1,6 @@
 ---
 date: '2020-09-15T20:57:28Z'
-description: ~
+description: The workflowr project myproject by stephens999
 lastmod: '2020-09-15T21:23:22Z'
 title: myproject
 topics: []

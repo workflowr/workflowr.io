@@ -1,7 +1,10 @@
+
+{{ define "hero" }}
+  {{- partial "hero.html" . -}}
+{{ end }}
+
 {{ define "main" }}
   {{ partial "breadcrumb.html" . }}
-  <h1  class="title is-1">{{ .Title }}</h1>
-
   <div class="field is-grouped is-grouped-multiline">
   {{ range .Pages }}
     <div class="control">
