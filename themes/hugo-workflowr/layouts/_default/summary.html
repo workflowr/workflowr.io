@@ -2,7 +2,7 @@
   <div class="media-content">
     <h3 class="title is-3"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     <h5 class="subtitle is-5">{{ .Params.account }}</h5>
-    <p class="content">{{ .Description }}</p>
+    <p class="content">{{ .Description | markdownify }}</p>
     {{ with .Params.topics }}
     <div class="field is-grouped is-grouped-multiline">
       {{ range . }}

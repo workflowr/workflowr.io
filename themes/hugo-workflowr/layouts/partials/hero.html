@@ -6,7 +6,7 @@
         {{ .Title }}
       </h1>
       <h2 class="subtitle">
-        {{ .Description }}
+        {{ .Description | markdownify }}
       </h2>
     </div>
   </div>
