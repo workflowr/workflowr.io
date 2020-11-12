@@ -1,0 +1,46 @@
+// https://bulma.io/documentation/customize/with-node-sass/
+@charset "utf-8";
+
+// Import a Google Font
+// Source Sans Pro
+// 400 Regular => Normal text
+// 400 Regular Italic => In case there is italicized text in any of the normal text
+// 600 Semi-Bold => H1 headers have font-weight of 600
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+// Set your brand colors
+$purple: rgb(110, 46, 158);
+$grey-darker: hsl(0, 0%, 21%); // built-in https://bulma.io/documentation/overview/colors/
+
+// Update Bulma's global variables
+$family-sans-serif: "Source Sans Pro", "Arial", sans-serif;
+$primary: $purple;
+$link: $purple;
+$info: $grey-darker;
+
+// Update some of Bulma's component variables
+$footer-background-color: $grey-darker;
+$footer-color: #fff; // white
+
+// Import only what you need from Bulma
+@import "bulma-0.9.1/utilities/_all.sass"; // has to be first
+@import "bulma-0.9.1/base/_all.sass";
+@import "bulma-0.9.1/components/breadcrumb.sass";
+@import "bulma-0.9.1/components/media.sass";
+@import "bulma-0.9.1/components/navbar.sass";
+@import "bulma-0.9.1/components/pagination.sass";
+@import "bulma-0.9.1/elements/button.sass";
+@import "bulma-0.9.1/elements/container.sass";
+@import "bulma-0.9.1/elements/content.sass";
+@import "bulma-0.9.1/elements/tag.sass";
+@import "bulma-0.9.1/elements/title.sass";
+@import "bulma-0.9.1/form/shared.sass"; // has to be first "form" import
+@import "bulma-0.9.1/form/input-textarea.sass";
+@import "bulma-0.9.1/form/tools.sass";
+// @import "bulma-0.9.1/grid/columns.sass";
+@import "bulma-0.9.1/helpers/color.sass";
+@import "bulma-0.9.1/helpers/spacing.sass";
+@import "bulma-0.9.1/helpers/typography.sass";
+@import "bulma-0.9.1/layout/footer.sass";
+@import "bulma-0.9.1/layout/hero.sass";
+@import "bulma-0.9.1/layout/section.sass";
