@@ -1,0 +1,31 @@
+{{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+<!--
+This iterates through all the taxonomies, which is currently only Topics. If I
+had Publications has a taxonomy, it would also be included here, which might not
+make as much sense. 
+-->
+<section class="section">
+  <h3 class="title is-3"><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname | humanize }}</a></h3>
+  <!--
+  I couldn't figure out how to order this by count. I don't know how to navigate
+  from .Site.Taxonomies to .Data.Terms.ByCount, which is what I used in
+  terms.html. 
+  -->
+  <div class="field is-grouped is-grouped-multiline">
+  {{ range $key, $value := $taxonomy }}
+  <!--
+  This will currently include every single tag, which could become
+  unsustainable. hugo-clarity sets a site parameter to limit the number of terms
+  shown.
+  https://github.com/chipzoller/hugo-clarity/blob/master/layouts/partials/sidebar.html#L30
+  -->
+    <div class="control">
+      <div class="tags has-addons">
+        <a class="tag is-link is-medium" href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}/{{ $key | urlize }}">{{ $key }}</a>
+        <p class="tag is-medium">{{ $value.Count }}</p>
+      </div>
+    </div>
+  {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -37,7 +37,7 @@ $footer-color: #fff; // white
 @import "bulma-0.9.1/form/shared.sass"; // has to be first "form" import
 @import "bulma-0.9.1/form/input-textarea.sass";
 @import "bulma-0.9.1/form/tools.sass";
-// @import "bulma-0.9.1/grid/columns.sass";
+@import "bulma-0.9.1/grid/columns.sass";
 @import "bulma-0.9.1/helpers/color.sass";
 @import "bulma-0.9.1/helpers/spacing.sass";
 @import "bulma-0.9.1/helpers/typography.sass";

@@ -4,8 +4,15 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ range (.Paginate .Site.RegularPages).Pages }}
-    {{ .Render "summary" }}
-  {{ end }}
+  <div class="columns">
+    <div class="column is-three-quarters">
+      {{ range (.Paginate .Site.RegularPages).Pages }}
+        {{ .Render "summary" }}
+      {{ end }}
+    </div>
+    <div class="column">
+      {{- partial "taxonomy-homepage.html" . -}}
+    </div>
+  </div>
   {{ partial "pagination.html" . }}
 {{ end }}
