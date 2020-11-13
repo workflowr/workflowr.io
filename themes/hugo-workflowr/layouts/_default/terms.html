@@ -6,12 +6,11 @@
 {{ define "main" }}
   {{ partial "breadcrumb.html" . }}
   <div class="field is-grouped is-grouped-multiline">
-  {{ range .Pages }}
+  {{ range .Data.Terms.ByCount }}
     <div class="control">
       <div class="tags has-addons">
-        <a class="tag is-link is-large" href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <!-- For when I can figure out how to include the count of projects with a given topic -->
-        <!-- <a class="tag">5</a> -->
+        <a class="tag is-link is-large" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+        <p class="tag is-large">{{ .Count }}</p>
       </div>
     </div>
   {{ end }}
