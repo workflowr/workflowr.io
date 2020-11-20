@@ -44,3 +44,14 @@ $footer-color: #fff; // white
 @import "bulma-0.9.1/layout/footer.sass";
 @import "bulma-0.9.1/layout/hero.sass";
 @import "bulma-0.9.1/layout/section.sass";
+
+// Keep the navbar background purple and text white even when collapsed on
+// smaller width screens.
+@media screen and (max-width: $desktop) {
+  .navbar-menu {
+    background-color: rgb(110, 46, 158);
+  }
+  a.navbar-item {
+    color: white;
+  }
+}
