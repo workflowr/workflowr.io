@@ -24,6 +24,8 @@ $footer-color: #fff; // white
 
 // Import only what you need from Bulma
 @import "bulma-0.9.1/utilities/_all.sass"; // has to be first
+// Wait to collapse the navbar until it reaches tablet size
+$navbar-breakpoint: $tablet;
 @import "bulma-0.9.1/base/_all.sass";
 @import "bulma-0.9.1/components/breadcrumb.sass";
 @import "bulma-0.9.1/components/media.sass";
@@ -47,7 +49,7 @@ $footer-color: #fff; // white
 
 // Keep the navbar background purple and text white even when collapsed on
 // smaller width screens.
-@media screen and (max-width: $desktop) {
+@media screen and (max-width: $tablet) {
   .navbar-menu {
     background-color: rgb(110, 46, 158);
   }
