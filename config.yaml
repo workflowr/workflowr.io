@@ -1,7 +1,6 @@
 baseURL: http://example.org/
 languageCode: en-us
 title: workflowr.io
-theme: hugo-workflowr
 taxonomies:
   topic: topics
 Paginate: 10
