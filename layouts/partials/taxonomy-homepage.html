@@ -12,17 +12,11 @@ make as much sense.
   terms.html. 
   -->
   <div class="field is-grouped is-grouped-multiline">
-  {{ range $key, $value := $taxonomy }}
-  <!--
-  This will currently include every single tag, which could become
-  unsustainable. hugo-clarity sets a site parameter to limit the number of terms
-  shown.
-  https://github.com/chipzoller/hugo-clarity/blob/master/layouts/partials/sidebar.html#L30
-  -->
+  {{ range ($taxonomy.ByCount | first 25) }}
     <div class="control">
       <div class="tags has-addons">
-        <a class="tag is-link is-medium" href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}/{{ $key | urlize }}">{{ $key }}</a>
-        <p class="tag is-medium">{{ $value.Count }}</p>
+        <a class="tag is-link is-medium" href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}/{{ .Name | urlize }}">{{ .Name }}</a>
+        <p class="tag is-medium">{{ .Count }}</p>
       </div>
     </div>
   {{ end }}
