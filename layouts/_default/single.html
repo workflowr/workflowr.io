@@ -10,9 +10,24 @@
 
 {{ define "main" }}
   {{ partial "breadcrumb.html" . }}
-  <p class="content">Project created: {{ .Date }}</p>
-  <p class="content">Last updated: {{.Lastmod }}</p>
-  <p class="content"><a href="{{ .Params.website }}" target="_blank">Website</a></p>
+  <p class="content">
+    <span class="icon">
+      <i class="fas fa-file-code"></i>
+    </span>
+    Project created: {{ .Date }}
+  </p>
+  <p class="content">
+    <span class="icon">
+      <i class="fas fa-screwdriver"></i>
+    </span>
+    Last updated: {{.Lastmod }}
+  </p>
+  <p class="content">
+    <span class="icon">
+      <i class="fab fa-github"></i>
+    </span>
+    <a href="{{ .Params.website }}" target="_blank">Website</a>
+  </p>
   {{ with .Params.topics }}
     <div class="field is-grouped is-grouped-multiline">
       {{ range . }}

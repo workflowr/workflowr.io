@@ -7,3 +7,6 @@
 {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed" ) }}
 {{ $style := $sass | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+<link rel="stylesheet" href="/css/brands.min.css">
+<link rel="stylesheet" href="/css/solid.min.css">
