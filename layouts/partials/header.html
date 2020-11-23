@@ -25,28 +25,21 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="field has-addons">
-            <div class="control">
-              <input class="input" type="text" placeholder="Search for projects">
-            </div>
-            <div class="control">
-              <a class="button is-info">
-                Search
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Working on DuckDuckGo search bar -->
-        <div class="navbar-item">
-          <div class="field">
-            <form method="get" id="search" action="http://duckduckgo.com/">
+          <form method="get" id="search" action="http://duckduckgo.com/">
+            <div class="field has-addons">
               <div class="control">
-                <input class="input" type="text" name="q" maxlength="255" placeholder="Search for projects">
+                <input class="input" type="search" name="q" maxlength="255" placeholder="Search site with DuckDuckGo">
                 <input type="hidden" name="sites" value="workflowr.io"/>
-                <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;"/>
               </div>
-            </form>
-          </div>
+              <div class="control">
+                <button type="submit" class="button is-info">
+                  <span class="icon">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
