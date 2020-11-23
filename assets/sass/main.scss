@@ -34,6 +34,7 @@ $navbar-breakpoint: $tablet;
 @import "bulma-0.9.1/elements/button.sass";
 @import "bulma-0.9.1/elements/container.sass";
 @import "bulma-0.9.1/elements/content.sass";
+@import "bulma-0.9.1/elements/image.sass";
 @import "bulma-0.9.1/elements/tag.sass";
 @import "bulma-0.9.1/elements/title.sass";
 @import "bulma-0.9.1/form/shared.sass"; // has to be first "form" import
@@ -56,4 +57,10 @@ $navbar-breakpoint: $tablet;
   a.navbar-item {
     color: white;
   }
+}
+
+// Style the thumbnail previews
+.thumbnail {
+  width: 25%;
+  border: solid 1px black;
 }

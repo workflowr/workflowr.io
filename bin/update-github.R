@@ -128,3 +128,11 @@ for (i in seq_along(output)) {
   cat("---\n\n", file = con, append = TRUE)
   close(con)
 }
+
+# Take screenshots for thumbnail images ---------------------------------------
+
+websites <- vapply(output, function(x) x[["website"]], character(1))
+createThumbnailPath <- function(x) {
+  file.path(dirContent, "github", x$account, x$title, "thumbnail.png")
+}
+thumbnails <- vapply(output, createThumbnailPath, character(1))
