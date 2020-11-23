@@ -52,6 +52,14 @@ for (i in seq_along(projects)) {
   p <- projects[[i]]
   message(paste(p$owner, p$repo, sep = "/"))
   repository <- gh::gh("/repos/:owner/:repo", owner = p$owner, repo = p$repo)
+
+  # Only include projects that have websites hosted on GitHub Pages
+  if (repository[["has_pages"]]) {
+    pages <- gh::gh("/repos/:owner/:repo/pages", owner = p$owner, repo = p$repo)
+  } else {
+    next
+  }
+
   topics <- gh::gh("/repos/:owner/:repo/topics", owner = p$owner, repo = p$repo,
                    .accept = "application/vnd.github.mercy-preview+json")
   if (length(topics$names) > 0) {
@@ -59,10 +67,6 @@ for (i in seq_along(projects)) {
   } else {
     topics <- list()
   }
-  pages <- tryCatch(
-    gh::gh("/repos/:owner/:repo/pages", owner = p$owner, repo = p$repo),
-    error = function(e) list()
-  )
 
   if (is.null(repository$description)) {
     description <- sprintf("The workflowr project %s by %s",
@@ -86,6 +90,9 @@ for (i in seq_along(projects)) {
   )
   Sys.sleep(0.25)
 }
+
+# Remove the repositories without a GitHub Pages website
+output <- Filter(function(x) !is.null(x), output)
 
 # Export projects -------------------------------------------------------------
 
