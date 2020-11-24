@@ -4,7 +4,6 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "breadcrumb.html" . }}
   {{ range (.Paginate .CurrentSection.RegularPagesRecursive).Pages }}
     {{ .Render "summary" }}
   {{ end }}

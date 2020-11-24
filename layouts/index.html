@@ -1,18 +1,81 @@
 
 {{ define "hero" }}
-  {{- partial "hero.html" . -}}
+  <section class="hero is-dark is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">
+          {{ .Title }}
+        </h1>
+        <h2 class="subtitle is-2">
+          {{ .Description | markdownify }}
+        </h2>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="container">
+        <section class="section">
+          <h3 class="title is-3">Popular topics</h3>
+          <div class="field is-grouped is-grouped-multiline">
+          {{ range (.Site.Taxonomies.topics.ByCount | first 15) }}
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link is-medium" href="/topics/{{ .Name | urlize }}">{{ .Name }}</a>
+                <p class="tag is-medium">{{ .Count }}</p>
+              </div>
+            </div>
+          {{ end }}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
 {{ end }}
 
 {{ define "main" }}
   <div class="columns">
-    <div class="column is-three-quarters">
-      {{ range (.Paginate .Site.RegularPages).Pages }}
-        {{ .Render "summary" }}
-      {{ end }}
+    <div class="column">
+      <h3 class="title is-3 has-text-centered">
+        <a href="/projects/">
+          <span class="icon is-large">
+            <i class="fas fa-chart-bar"></i>
+          </span>
+        </a>
+      </h3>
+      <h3 class="subtitle is-3 has-text-centered">Search for projects</h3>
+      <p class="content">
+        You can search for the available open science projects by <a
+        href="/topics/">Topic</a>, using the search bar above, or simply
+        browsing the <a href="/projects/">list of projects</a>.
+      </p>
     </div>
     <div class="column">
-      {{- partial "taxonomy-homepage.html" . -}}
+      <h3 class="title is-3 has-text-centered">
+        <a href="/docs/">
+          <span class="icon is-large">
+            <i class="fas fa-book"></i>
+          </span>
+        </a>
+      </h3>
+      <h3 class="subtitle is-3 has-text-centered">Documentation</h3>
+      <p class="content">
+        Check out the <a href="/docs/">documentation</a> to learn how to find
+        projects or add your own.
+      </p>
+    </div>
+    <div class="column">
+      <h3 class="title is-3 has-text-centered">
+        <a href="/posts/">
+          <span class="icon is-large">
+            <i class="fas fa-blog"></i>
+          </span>
+        </a>
+      </h3>
+      <h3 class="subtitle is-3 has-text-centered">Blog</h3>
+      <p class="content">
+        Read the latest <a href="/posts/">posts</a> to learn about recent
+        workflowr developments and how workflowr is being used to support
+        reproducible data science.
+      </p>
     </div>
   </div>
-  {{ partial "pagination.html" . }}
 {{ end }}
