@@ -1,0 +1,43 @@
+
+{{ define "title" }}
+  <!-- This will override the default value set in baseof.html; i.e., "{{.Site.Title}}" in the original example-->
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "hero" }}
+  {{- partial "hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+  <p class="content">
+    <span class="icon">
+      <i class="fas fa-file-code"></i>
+    </span>
+    Project created: {{ .Date }}
+  </p>
+  <p class="content">
+    <span class="icon">
+      <i class="fas fa-screwdriver"></i>
+    </span>
+    Last updated: {{.Lastmod }}
+  </p>
+  <p class="content">
+    <span class="icon">
+      <i class="fab fa-github"></i>
+    </span>
+    <a href="{{ .Params.website }}" target="_blank">Website</a>
+  </p>
+  {{ with .Params.topics }}
+    <div class="field is-grouped is-grouped-multiline">
+      {{ range . }}
+      <div class="control">
+        <div class="tags has-addons">
+          <a class="tag is-link is-medium" href="/topics/{{ . }}">{{ . }}</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  {{ end }}
+  {{ .Content }}
+  {{ partial "related.html" . }}
+{{ end }}
