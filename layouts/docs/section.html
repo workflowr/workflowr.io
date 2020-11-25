@@ -1,0 +1,26 @@
+
+{{ define "hero" }}
+  {{- partial "hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <h4 class="title is-h4">Table of contents</h4>
+      <div class="content">
+      <ul>
+        {{ range .Pages.ByWeight }}
+          <li>
+            <a href="#{{ .Title | urlize }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+    </div>
+    <div class="column is-half">
+      {{ range .Pages.ByWeight }}
+        {{ .Render "summary" }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
