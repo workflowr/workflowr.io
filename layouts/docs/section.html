@@ -6,16 +6,18 @@
 {{ define "main" }}
   <div class="columns">
     <div class="column is-one-quarter">
-      <h4 class="title is-h4">Table of contents</h4>
-      <div class="content">
-      <ul>
-        {{ range .Pages.ByWeight }}
+      <aside class="menu">
+        <p class="menu-label">
+          Table of contents
+        </p>
+        <ul class="menu-list">
+          {{ range .Pages.ByWeight }}
           <li>
             <a href="#{{ .Title | urlize }}">{{ .Title }}</a>
           </li>
-        {{ end }}
-      </ul>
-    </div>
+          {{ end }}
+        </ul>
+      </aside>
     </div>
     <div class="column is-half">
       {{ range .Pages.ByWeight }}
