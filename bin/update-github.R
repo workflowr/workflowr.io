@@ -1,5 +1,9 @@
 #!/usr/bin/env Rscript
 
+# Requires GH_APP_ID and GH_APP_KEY for GitHub App workflowr.io
+#
+# https://github.com/workflowr/wio
+# https://docs.github.com/en/free-pro-team@latest/rest/reference/apps#list-installations-for-the-authenticated-app
 # https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#get-a-repository
 # https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#get-all-repository-topics
 # https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#get-a-github-pages-site
@@ -8,40 +12,16 @@
 
 suppressMessages({
   requireNamespace("gh")
+  requireNamespace("wio")
   requireNamespace("yaml")
 })
 
-account <- gh::gh_whoami()
-if (is.null(account)) {
-  stop("No GitHub access token could be found", call. = FALSE)
-}
-message(sprintf("Using the GitHub account '%s'", account$login))
-rate <- gh::gh("/rate_limit")
-message(sprintf("Remaining API requests: %d", rate$rate$remaining))
-if (rate$rate$remaining < 100) {
-  stop("Insufficient remaining API requests available", call. = FALSE)
-}
-
 # Obtain projects -------------------------------------------------------------
 
-# To do: Download list of GitHub repositories that have GitHub App installed
+projects <- wio::getProjectsOnGitHub()
 
-users <- c("jdblischak", "pcarbo", "stephens999", "stephenslab")
-results <- list()
-for (user in users) {
-  query <- sprintf("filename%%3A_workflowr.yml+user%%3A%s&per_page=100", user)
-  search <- gh::gh(paste0("/search/code?q=", query))
-  results <- c(results, search$items)
-}
-
-projects <- vector(mode = "list", length = length(results))
-for (i in seq_along(results)) {
-  projects[[i]] <- list(owner = results[[i]]$repository$owner$login,
-                        repo = results[[i]]$repository$name)
-}
-
-# Remove the workflowr repository itself. It contains _workflowr.yml in the
-# tests directory
+# Remove any forks of the workflowr repository itself. It contains
+# _workflowr.yml in the tests directory.
 projects <- Filter(function(x) x[["repo"]] != "workflowr", projects)
 
 # Gather project information --------------------------------------------------
@@ -136,3 +116,4 @@ createThumbnailPath <- function(x) {
   file.path(dirContent, "github", x$account, x$title, "thumbnail.png")
 }
 thumbnails <- vapply(output, createThumbnailPath, character(1))
+wio::screenshot(websites, thumbnails)
