@@ -23,31 +23,31 @@ $footer-background-color: $grey-darker;
 $footer-color: #fff; // white
 
 // Import only what you need from Bulma
-@import "bulma-0.9.1/utilities/_all.sass"; // has to be first
+@import "bulma/sass/utilities/_all.sass"; // has to be first
 // Wait to collapse the navbar until it reaches tablet size
 $navbar-breakpoint: $tablet;
-@import "bulma-0.9.1/base/_all.sass";
-@import "bulma-0.9.1/components/breadcrumb.sass";
-@import "bulma-0.9.1/components/media.sass";
-@import "bulma-0.9.1/components/menu.sass";
-@import "bulma-0.9.1/components/navbar.sass";
-@import "bulma-0.9.1/components/pagination.sass";
-@import "bulma-0.9.1/elements/button.sass";
-@import "bulma-0.9.1/elements/container.sass";
-@import "bulma-0.9.1/elements/content.sass";
-@import "bulma-0.9.1/elements/image.sass";
-@import "bulma-0.9.1/elements/tag.sass";
-@import "bulma-0.9.1/elements/title.sass";
-@import "bulma-0.9.1/form/shared.sass"; // has to be first "form" import
-@import "bulma-0.9.1/form/input-textarea.sass";
-@import "bulma-0.9.1/form/tools.sass";
-@import "bulma-0.9.1/grid/columns.sass";
-@import "bulma-0.9.1/helpers/color.sass";
-@import "bulma-0.9.1/helpers/spacing.sass";
-@import "bulma-0.9.1/helpers/typography.sass";
-@import "bulma-0.9.1/layout/footer.sass";
-@import "bulma-0.9.1/layout/hero.sass";
-@import "bulma-0.9.1/layout/section.sass";
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/components/breadcrumb.sass";
+@import "bulma/sass/components/media.sass";
+@import "bulma/sass/components/menu.sass";
+@import "bulma/sass/components/navbar.sass";
+@import "bulma/sass/components/pagination.sass";
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/elements/container.sass";
+@import "bulma/sass/elements/content.sass";
+@import "bulma/sass/elements/image.sass";
+@import "bulma/sass/elements/tag.sass";
+@import "bulma/sass/elements/title.sass";
+@import "bulma/sass/form/shared.sass"; // has to be first "form" import
+@import "bulma/sass/form/input-textarea.sass";
+@import "bulma/sass/form/tools.sass";
+@import "bulma/sass/grid/columns.sass";
+@import "bulma/sass/helpers/color.sass";
+@import "bulma/sass/helpers/spacing.sass";
+@import "bulma/sass/helpers/typography.sass";
+@import "bulma/sass/layout/footer.sass";
+@import "bulma/sass/layout/hero.sass";
+@import "bulma/sass/layout/section.sass";
 
 // Keep the navbar background purple and text white even when collapsed on
 // smaller width screens.
