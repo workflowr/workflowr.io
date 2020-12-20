@@ -102,18 +102,55 @@ for (i in seq_along(output)) {
   dirProject <- file.path(dirContent, "github", output[[i]]$account, output[[i]]$title)
   dir.create(dirProject, showWarnings = FALSE, recursive = TRUE)
   fileProject <- file.path(dirProject, "index.md")
-  con <- file(fileProject, "w")
-  cat("---\n", file = con)
-  yaml::write_yaml(output[[i]], file = con)
-  cat("---\n\n", file = con, append = TRUE)
-  close(con)
+  wio::exportYamlHeader(output[[i]], fileProject)
 }
 
 # Take screenshots for thumbnail images ---------------------------------------
 
+message("Taking screenshots...")
 websites <- vapply(output, function(x) x[["website"]], character(1))
 createThumbnailPath <- function(x) {
   file.path(dirContent, "github", x$account, x$title, "thumbnail.png")
 }
 thumbnails <- vapply(output, createThumbnailPath, character(1))
 wio::screenshot(websites, thumbnails)
+
+# Publications ----------------------------------------------------------------
+
+message("Creating publications...")
+dirPublication <- "content/publications"
+dir.create(dirPublication, showWarnings = FALSE, recursive = TRUE)
+# `publications` is a triply-nested list of character vectors.
+#   - platform (github)
+#     - account
+#       - repository
+#         - DOIs
+publications <- yaml::read_yaml("data/publications.yml")
+for (i in seq_along(publications)) { # platforms
+  platform <- names(publications)[i]
+  for (j in seq_along(publications[[i]])) { # accounts
+    account <- names(publications[[i]])[j]
+    for (k in seq_along(publications[[i]][[j]])) { # repositories
+      repository <- names(publications[[i]][[j]])[k]
+      dois <- publications[[i]][[j]][[k]]
+      stopifnot(is.character(dois), length(dois) > 0)
+      metadata <- wio::getPublicationMetadata(dois)
+      doisEncoded <- utils::URLencode(dois, reserved = TRUE)
+      for (l in seq_along(metadata)) {
+        dirPublicationTerm <- file.path(dirPublication, doisEncoded[i])
+        dir.create(dirPublicationTerm, showWarnings = FALSE, recursive = TRUE)
+        filePublication <- file.path(dirPublicationTerm, "_index.md")
+        wio::exportYamlHeader(metadata[[l]], filePublication)
+      }
+      fileProject <- file.path(dirContent, platform, account, repository, "index.md")
+      # I have to specify the handler because yaml auto-unboxes arrays of length
+      # 1, and there is no argument to prevent this behavior. This breaks the
+      # "topics" field when there is only when topic.
+      # https://github.com/viking/r-yaml/issues/69
+      # https://github.com/rstudio/plumber/issues/390#issuecomment-477551810
+      ymlProject <- yaml::read_yaml(fileProject, handlers = list(seq = function(x) x))
+      ymlProject[["publications"]] <- as.list(doisEncoded)
+      wio::exportYamlHeader(ymlProject, fileProject)
+    }
+  }
+}

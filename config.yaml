@@ -2,6 +2,7 @@ baseURL: https://workflowr.io/
 languageCode: en-us
 title: workflowr.io
 taxonomies:
+  publication: publications
   topic: topics
 Paginate: 10
 

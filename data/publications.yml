@@ -1,0 +1,9 @@
+github:
+  jdblischak:
+    fucci-seq:
+      - 10.1101/gr.247759.118
+    singlecell-qtl:
+      - 10.1371/journal.pgen.1008045
+  stephenslab:
+    gtexresults:
+      - 10.1101/096552

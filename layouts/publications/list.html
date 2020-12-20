@@ -1,0 +1,13 @@
+
+{{ define "hero" }}
+{{- partial "hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+<ul>
+{{ range (.Paginate .Data.Pages).Pages }}
+  <li><a href="{{ .RelPermalink }}">{{ .Params.Title }}</a></li>
+{{ end }}
+</ul>
+{{ partial "pagination.html" . }}
+{{ end }}
