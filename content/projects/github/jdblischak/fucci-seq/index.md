@@ -8,5 +8,7 @@ topics:
 - r
 account: jdblischak
 website: https://jdblischak.github.io/fucci-seq/
+publications:
+- hsiao2020
 ---
 

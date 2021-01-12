@@ -4,10 +4,15 @@
 {{ end }}
 
 {{ define "main" }}
+<div class="content">
 <ul>
 {{ range (.Paginate .Data.Pages).Pages }}
-  <li><a href="{{ .RelPermalink }}">{{ .Params.Title }}</a></li>
+  <li>
+    <a href="{{ .RelPermalink }}">{{.Params.author}} {{ .Params.year }}</a>
+    {{ .Params.title }}
+  </li>
 {{ end }}
 </ul>
+</div>
 {{ partial "pagination.html" . }}
 {{ end }}

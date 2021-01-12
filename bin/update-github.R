@@ -135,9 +135,14 @@ for (i in seq_along(publications)) { # platforms
       dois <- publications[[i]][[j]][[k]]
       stopifnot(is.character(dois), length(dois) > 0)
       metadata <- wio::getPublicationMetadata(dois)
-      doisEncoded <- utils::URLencode(dois, reserved = TRUE)
+      authors <- vapply(metadata, function(x) x[["author"]], character(1))
+      years <- vapply(metadata, function(x) x[["year"]], numeric(1))
+      publicationIds <- paste0(tolower(authors), years)
+      if (any(duplicated(publicationIds))) {
+        warning("Duplicated publication IDs. Need to add month and day")
+      }
       for (l in seq_along(metadata)) {
-        dirPublicationTerm <- file.path(dirPublication, doisEncoded[i])
+        dirPublicationTerm <- file.path(dirPublication, publicationIds[i])
         dir.create(dirPublicationTerm, showWarnings = FALSE, recursive = TRUE)
         filePublication <- file.path(dirPublicationTerm, "_index.md")
         wio::exportYamlHeader(metadata[[l]], filePublication)
@@ -149,7 +154,7 @@ for (i in seq_along(publications)) { # platforms
       # https://github.com/viking/r-yaml/issues/69
       # https://github.com/rstudio/plumber/issues/390#issuecomment-477551810
       ymlProject <- yaml::read_yaml(fileProject, handlers = list(seq = function(x) x))
-      ymlProject[["publications"]] <- as.list(doisEncoded)
+      ymlProject[["publications"]] <- as.list(publicationIds)
       wio::exportYamlHeader(ymlProject, fileProject)
     }
   }

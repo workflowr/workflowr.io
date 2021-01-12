@@ -7,5 +7,7 @@ title: gtexresults
 topics: []
 account: stephenslab
 website: https://stephenslab.github.io/gtexresults/
+publications:
+- urbut2016
 ---
 

@@ -7,5 +7,7 @@ topics:
 - single-cell
 account: jdblischak
 website: https://jdblischak.github.io/singlecell-qtl/
+publications:
+- sarkar2019
 ---
 

@@ -38,6 +38,14 @@
       {{ end }}
     </div>
   {{ end }}
+  {{ with .Params.publications }}
+    <p class="content">
+      <strong>Publications:</strong>
+    {{ range . }}
+      <a href="/publications/{{ . }}">{{ . }}</a>
+    {{ end }}
+    </p>
+  {{ end }}
   {{ .Content }}
   {{ partial "related.html" . }}
 {{ end }}
