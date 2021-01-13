@@ -6,7 +6,7 @@
 {{ define "main" }}
 <div class="content">
 <ul>
-{{ range (.Paginate .Data.Pages).Pages }}
+{{ range (.Paginate (.Data.Pages.ByParam "year").Reverse).Pages }}
   <li>
     <a href="{{ .RelPermalink }}">{{.Params.author}} {{ .Params.year }}</a>
     {{ .Params.title }}
