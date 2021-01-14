@@ -2,9 +2,11 @@
 {{ $related := .Site.RegularPages.Related . | first 5 }}
 {{ with $related }}
 <h3 class="title is-3">Related projects</h3>
-<ul class="content">
-	{{ range . }}
-	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-	{{ end }}
-</ul>
+<div class="content">
+  <ul>
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
 {{ end }}

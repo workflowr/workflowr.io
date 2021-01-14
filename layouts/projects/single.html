@@ -9,43 +9,77 @@
 {{ end }}
 
 {{ define "main" }}
-  <p class="content">
-    <span class="icon">
-      <i class="fas fa-file-code"></i>
-    </span>
-    Project created: {{ .Date }}
-  </p>
-  <p class="content">
-    <span class="icon">
-      <i class="fas fa-screwdriver"></i>
-    </span>
-    Last updated: {{.Lastmod }}
-  </p>
-  <p class="content">
-    <span class="icon">
-      <i class="fab fa-github"></i>
-    </span>
-    <a href="{{ .Params.website }}" target="_blank">Website</a>
-  </p>
-  {{ with .Params.topics }}
-    <div class="field is-grouped is-grouped-multiline">
-      {{ range . }}
-      <div class="control">
-        <div class="tags has-addons">
-          <a class="tag is-link is-medium" href="/topics/{{ . }}">{{ . }}</a>
-        </div>
+  <div class="level has-background-grey-lighter">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">
+          <span class="icon">
+          <i class="fas fa-file-code"></i>
+        </span>
+        Project created</p>
+        <p class="title is-5">{{ dateFormat "2006-01-02" .Date }}</p>
       </div>
-      {{ end }}
     </div>
-  {{ end }}
-  {{ with .Params.publications }}
-    <p class="content">
-      <strong>Publications:</strong>
-    {{ range . }}
-      <a href="/publications/{{ . }}">{{ . }}</a>
-    {{ end }}
-    </p>
-  {{ end }}
-  {{ .Content }}
-  {{ partial "related.html" . }}
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">
+          <span class="icon">
+            <i class="fas fa-screwdriver"></i>
+          </span>
+          Last updated
+        </p>
+        <p class="title is-5">{{ dateFormat "2006-01-02" .Lastmod }}</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">
+          <span class="icon">
+            <i class="fab fa-github"></i>
+          </span>
+        </p>
+        <p class="title is-5">
+          <a href="{{ .Params.website }}" target="_blank">Website</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-two-fifths">
+      <figure class="thumbnail">
+        <p class="image">
+          <img src="{{ .RelPermalink }}thumbnail.png"
+               alt="Thumbnail preview of website for workflowr project {{ .Title }}.">
+        </p>
+      </figure>
+    </div>
+    <div class="column is-one-third">
+      {{ with .Params.topics }}
+        <h3 class="title is-3">Topics</h3>
+        <div class="field is-grouped is-grouped-multiline">
+          {{ range . }}
+          <div class="control">
+            <div class="tags has-addons">
+              <a class="tag is-link is-medium" href="/topics/{{ . }}">{{ . }}</a>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      {{ end }}
+      {{ with .Params.publications }}
+        <h3 class="title is-3">Publications</h3>
+        <div class="content">
+          <ul>
+          {{ range . }}
+            <li>
+              <a href="/publications/{{ . }}">{{ . }}</a>
+            </li>
+          {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      {{ .Content }}
+      {{ partial "related.html" . }}
+    </div>
+  </div>
 {{ end }}
