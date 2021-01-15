@@ -4,7 +4,7 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ range (.Paginate .CurrentSection.RegularPagesRecursive).Pages }}
+  {{ range (.Paginate .CurrentSection.RegularPagesRecursive.ByLastmod.Reverse).Pages }}
     {{ .Render "summary" }}
   {{ end }}
   {{ partial "pagination.html" . }}
