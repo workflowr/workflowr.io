@@ -78,7 +78,6 @@ output <- Filter(function(x) !is.null(x), output)
 
 dirContent <- "content/projects"
 dirGitHub <- file.path(dirContent, "github")
-unlink(dirGitHub, recursive = TRUE)
 dir.create(dirGitHub, showWarnings = FALSE, recursive = TRUE)
 sectionFileGitHub <- file.path(dirGitHub, "_index.md")
 writeLines(c("---",
@@ -87,6 +86,17 @@ writeLines(c("---",
              "---",
              ""),
            con = sectionFileGitHub)
+
+# Existing projects
+existing <- list.files(
+  path = dirContent,
+  pattern = "^index.md$",
+  recursive = TRUE,
+  full.names = TRUE
+)
+existing <- dirname(existing)
+
+lastmodPrevious <- character(length = length(output))
 
 for (i in seq_along(output)) {
   dirAccount <- file.path(dirContent, "github", output[[i]]$account)
@@ -102,23 +112,33 @@ for (i in seq_along(output)) {
   dirProject <- file.path(dirContent, "github", output[[i]]$account, output[[i]]$title)
   dir.create(dirProject, showWarnings = FALSE, recursive = TRUE)
   fileProject <- file.path(dirProject, "index.md")
+  if (file.exists(fileProject)) {
+    lastmodPrevious[i] <- yaml::read_yaml(fileProject)[["lastmod"]]
+  }
   wio::exportYamlHeader(output[[i]], fileProject)
 }
 
 # Take screenshots for thumbnail images ---------------------------------------
 
+# Only take a screenshot of the site has been modified since the last screenshot
+
 message("Taking screenshots...")
-websites <- vapply(output, function(x) x[["website"]], character(1))
+lastmodCurrent <- vapply(output, function(x) x[["lastmod"]], character(1))
+lastmodCurrent <- strptime(lastmodCurrent, "%Y-%m-%dT%H:%M:%OSZ", tz = "UTC")
+lastmodPrevious <- strptime(lastmodPrevious, "%Y-%m-%dT%H:%M:%OSZ", tz = "UTC")
+newScreenshot <- lastmodCurrent > lastmodPrevious
+websites <- vapply(output[newScreenshot], function(x) x[["website"]], character(1))
 createThumbnailPath <- function(x) {
   file.path(dirContent, "github", x$account, x$title, "thumbnail.png")
 }
-thumbnails <- vapply(output, createThumbnailPath, character(1))
+thumbnails <- vapply(output[newScreenshot], createThumbnailPath, character(1))
 wio::screenshot(websites, thumbnails)
 
 # Publications ----------------------------------------------------------------
 
 message("Creating publications...")
 dirPublication <- "content/publications"
+unlink(dirPublication, recursive = TRUE)
 dir.create(dirPublication, showWarnings = FALSE, recursive = TRUE)
 # `publications` is a triply-nested list of character vectors.
 #   - platform (github)
@@ -159,3 +179,33 @@ for (i in seq_along(publications)) { # platforms
     }
   }
 }
+
+# Cleanup ---------------------------------------------------------------------
+
+# Remove projects not in output list
+# Nuclear option: unlink(dirGitHub, recursive = TRUE)
+
+current <- file.path(
+  dirGitHub,
+  vapply(output, function(x) x[["account"]], character(1)),
+  vapply(output, function(x) x[["title"]], character(1))
+)
+
+remove <- existing[!existing %in% current]
+message("Removing projects: ", paste(basename(remove), collapse = ", "))
+unlink(remove, recursive = TRUE)
+
+# Remove accounts with no projects
+accountsExisting <- list.files(
+  path = dirGitHub,
+  pattern = "^[^_]", # Don't include section index file _index.md
+  include.dirs = TRUE,
+  full.names = TRUE
+)
+accountsCurrent <- file.path(
+  dirGitHub,
+  vapply(output, function(x) x[["account"]], character(1))
+)
+accountsRemove <- accountsExisting[!accountsExisting %in% accountsCurrent]
+message("Removing accounts: ", paste(basename(accountsRemove), collapse = ", "))
+unlink(accountsRemove, recursive = TRUE)
