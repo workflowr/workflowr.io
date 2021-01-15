@@ -114,6 +114,9 @@ for (i in seq_along(output)) {
   fileProject <- file.path(dirProject, "index.md")
   if (file.exists(fileProject)) {
     lastmodPrevious[i] <- yaml::read_yaml(fileProject)[["lastmod"]]
+  } else {
+    # Choose an arbitrarily old date, prior to the existence of GitHub
+    lastmodPrevious[i] <- "1900-01-01T01:01:01Z"
   }
   wio::exportYamlHeader(output[[i]], fileProject)
 }
@@ -192,8 +195,10 @@ current <- file.path(
 )
 
 remove <- existing[!existing %in% current]
-message("Removing projects: ", paste(basename(remove), collapse = ", "))
-unlink(remove, recursive = TRUE)
+if (length(remove) > 0) {
+  message("Removing projects: ", paste(basename(remove), collapse = ", "))
+  unlink(remove, recursive = TRUE)
+}
 
 # Remove accounts with no projects
 accountsExisting <- list.files(
@@ -207,5 +212,7 @@ accountsCurrent <- file.path(
   vapply(output, function(x) x[["account"]], character(1))
 )
 accountsRemove <- accountsExisting[!accountsExisting %in% accountsCurrent]
-message("Removing accounts: ", paste(basename(accountsRemove), collapse = ", "))
-unlink(accountsRemove, recursive = TRUE)
+if (length(accountsRemove) > 0) {
+  message("Removing accounts: ", paste(basename(accountsRemove), collapse = ", "))
+  unlink(accountsRemove, recursive = TRUE)
+}
