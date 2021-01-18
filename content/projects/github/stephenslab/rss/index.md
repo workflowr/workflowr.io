@@ -13,5 +13,6 @@ account: stephenslab
 website: https://stephenslab.github.io/rss/
 publications:
 - zhu2017
+- zhu2018
 ---
 

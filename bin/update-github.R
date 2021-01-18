@@ -165,7 +165,7 @@ for (i in seq_along(publications)) { # platforms
         warning("Duplicated publication IDs. Need to add month and day")
       }
       for (l in seq_along(metadata)) {
-        dirPublicationTerm <- file.path(dirPublication, publicationIds[i])
+        dirPublicationTerm <- file.path(dirPublication, publicationIds[l])
         dir.create(dirPublicationTerm, showWarnings = FALSE, recursive = TRUE)
         filePublication <- file.path(dirPublicationTerm, "_index.md")
         wio::exportYamlHeader(metadata[[l]], filePublication)
