@@ -32,6 +32,12 @@ listed on the home page, but you can view all available topics at
 [/topics/](/topics/). Clicking on a topic will take you to a page that lists all
 the projects labeled with this topic, e.g. [single-cell](/topics/single-cell/).
 
+### By publication
+
+Some workflowr projects on workflowr.io are associated with published research.
+Go to [Publications](/publications/) to view the publications with results that
+are supported by a reproducible and transparent workflowr project.
+
 ### Search bar
 
 The navigation bar contains a search bar powered by [DuckDuckGo][]. When you use
@@ -85,6 +91,19 @@ The description of your workflowr project is obtained from the Description secti
 The topics assigned to workflowr projects on workflowr.io are obtained directly from the topics you assigned to your GitHub repository. We highly encourage you to add topics to make it easier for others to find your project both on workflowr.io and GitHub.
 
 * [GitHub Help: Classifying your repository with topics](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/classifying-your-repository-with-topics)
+
+### Add a publication
+
+The workflowr projects shared on workflowr.io are **not** required to be
+associated with a publication. However, if your workflowr project did result in
+a publication, please share! All you need to provide is the [DOI][].
+
+[DOI]: https://en.wikipedia.org/wiki/Digital_object_identifier
+
+Please [open an Issue on GitHub][issue-publication] to provide the DOI for the
+publication and the associated project(s).
+
+[issue-publication]: https://github.com/workflowr/workflowr.io/issues/new/choose
 
 ### Remove a project
 
