@@ -46,11 +46,33 @@ of your query limited to workflowr.io.
 
 In order to add your workflowr project to workflowr.io, you need to install the
 [workflowr.io GitHub App][github-app] for the specific repositories that you
-want to share. This app only requests read-only access to a minimal set of
-information about your repository. In fact, it only accesses information that is
-available for all public repositories on GitHub.
+want to share. Installing the GitHub App is quick and convenient.
 
 [github-app]: https://github.com/apps/workflowr-io
+
+1. Go to https://github.com/apps/workflowr-io and click Install
+
+   {{< figure
+     src="/img/docs/github-app-install.jpg"
+     alt="Screenshot of GitHub App installation page"
+   >}}
+
+1. Choose the GitHub account that contains your workflowr repository
+
+1. Do **not** install the app on all of your repositories. Instead choose "Only
+   select repositories" and click on the workflowr projects you want to share on
+   workflowr.io. Then click Install.
+
+   {{< figure
+     src="/img/docs/github-app-select.jpg"
+     alt="Screenshot of selecting repositories to install GitHub App"
+   >}}
+
+   The permissions requested by the app are minimal. It requests read access to
+   publicly available data about your repository (see the section
+   [Privacy](#privacy) below for more details). It requests write access to your
+   GitHub Issues. This will only be used to notify you of any problems with your
+   workflowr project.
 
 ### Edit description
 
