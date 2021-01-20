@@ -11,10 +11,14 @@ The projects are organized by the hosting platform, user name, and project name.
 The organization is hierarchical, so each section lists the available projects
 nested below it. Some concrete examples:
 
-* `/projects/` - Lists all workflowr projects available on workflowr.io
-* `/projects/github/` - Lists the workflowr projects hosted on [GitHub][]
-* `/projects/github/jdblischak/` - Lists the workflowr projects by [GitHub][] user [jdblischak][]
-* `/projects/github/jdblischak/fucci-seq` - Main page for workflowr project [fucci-seq][]
+* [/projects/](/projects/) -
+    Lists all workflowr projects available on workflowr.io
+* [/projects/github/](/projects/github/) -
+    Lists the workflowr projects hosted on [GitHub][]
+* [/projects/github/jdblischak/](/projects/github/jdblischak/) -
+    Lists the workflowr projects by [GitHub][] user [jdblischak][]
+* [/projects/github/jdblischak/fucci-seq](/projects/github/jdblischak/fucci-seq) -
+    Main page for workflowr project [fucci-seq][]
 
 [GitHub]: https://github.com/
 [jdblischak]: https://github.com/jdblischak/
@@ -73,8 +77,8 @@ There are two ways you can access the configuration for the GitHub App:
 
 Regardless of which method you used, next click Configure for the workflowr.io
 GitHub App. You can choose to uninstall the app for one or more repositories by
-clicking on the X next to their name. To remove the app from your account (and
-thus any projects it was installed on), click the button at the very bottom to
+clicking on the `X` next to their name. To remove the app from all the your
+repositories it was installed on, click the button at the very bottom to
 uninstall the app from your account.
 
 ## About this site
@@ -112,13 +116,14 @@ of them:
 * [Hugo](https://gohugo.io/) - Static site generator
 * [Netlify][] - Deploy and host site
 * [R](https://www.r-project.org/) - Data management
+* [TinyPNG](https://tinypng.com/) - Image compression
 
 [Netlify]: https://www.netlify.com/
 
 ### Funding
 
 The [workflowr][] project is grateful for support from the [Moore
-Foundation][moore] and the University of Chicago][uchicago].
+Foundation][moore] and the [University of Chicago][uchicago].
 
 [moore]: https://www.moore.org/
 [uchicago]: https://www.uchicago.edu/
@@ -132,9 +137,10 @@ Foundation][moore] and the University of Chicago][uchicago].
 We don't collect any data on you. We don't store any cookies. In fact, there
 isn't even any JavaScript running on this site.
 
-If you use the search bar, you will be taken to duckduckgo.com. However, they
-are a [privacy-conscious company](https://duckduckgo.com/about), and they do not
-store your search queries or track you.
+If you use the search bar, you will be taken to
+[duckduckgo.com](https://duckduckgo.com/). However, they are a
+[privacy-conscious company](https://duckduckgo.com/about), and they do not store
+your search queries or track you.
 
 The website is hosted on [Netlify][] servers. We have no reason to believe they
 collect any personal information from you. See their [Terms of Use
@@ -144,10 +150,10 @@ Agreement][netlify-toc] for more details.
 
 #### For workflowr users
 
-The workflowr.io GitHub App only accesses publicly available data for your
-GitHub repository. In other words, any data displayed on workflowr.io is also
-easily accessible by browsing GitHub or querying publicly accessible endpoints
-of their API.
+The [workflowr.io GitHub App][github-app] only accesses publicly available data
+for your GitHub repository. In other words, any data displayed on workflowr.io
+is also easily accessible by browsing GitHub or querying publicly accessible
+endpoints of their API.
 
 ## Miscellaneous
 
