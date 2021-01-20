@@ -103,7 +103,7 @@ a publication, please share! All you need to provide is the [DOI][].
 Please [open an Issue on GitHub][issue-publication] to provide the DOI for the
 publication and the associated project(s).
 
-[issue-publication]: https://github.com/workflowr/workflowr.io/issues/new/choose
+[issue-publication]: https://github.com/workflowr/workflowr.io/issues/new?assignees=jdblischak&labels=publication&template=publication.md
 
 ### Remove a project
 
