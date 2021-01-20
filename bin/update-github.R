@@ -65,6 +65,7 @@ for (i in seq_along(projects)) {
     # Taxonomies
     topics = topics,
     # User-defined
+    platform = "github",
     account = repository$owner$login,
     website = pages$html_url
   )
@@ -105,6 +106,7 @@ for (i in seq_along(output)) {
   writeLines(c("---",
                sprintf("title: %s", output[[i]]$account),
                sprintf("description: Workflowr projects by %s", output[[i]]$account),
+               "platform: github",
                "---",
                ""),
                con = fileAccount)

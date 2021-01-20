@@ -6,6 +6,7 @@ title: fucci-seq
 topics:
 - single-cell
 - r
+platform: github
 account: jdblischak
 website: https://jdblischak.github.io/fucci-seq/
 publications:

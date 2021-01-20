@@ -9,6 +9,7 @@ topics:
 - gwas-summary-statistics
 - mcmc
 - variational-inference
+platform: github
 account: stephenslab
 website: https://stephenslab.github.io/rss/
 publications:

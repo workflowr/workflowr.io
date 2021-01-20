@@ -9,6 +9,7 @@ topics:
 - variational-inference
 - gwas-summary-statistics
 - bayesian-methods
+platform: github
 account: xiangzhu
 website: https://xiangzhu.github.io/rss-gsea/
 publications:

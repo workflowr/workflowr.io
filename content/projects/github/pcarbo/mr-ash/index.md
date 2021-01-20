@@ -5,6 +5,7 @@ description: 'A simple implementation of the "multiple regression adaptive shrin
 lastmod: '2020-06-24T05:23:17Z'
 title: mr-ash
 topics: []
+platform: github
 account: pcarbo
 website: https://pcarbo.github.io/mr-ash/
 ---

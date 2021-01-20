@@ -5,6 +5,7 @@ description: Code and data resources accompanying Urbut et al (2017), "Flexible 
 lastmod: '2021-01-19T18:36:44Z'
 title: gtexresults
 topics: []
+platform: github
 account: stephenslab
 website: https://stephenslab.github.io/gtexresults/
 publications:

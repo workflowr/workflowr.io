@@ -8,6 +8,7 @@ topics:
 - python
 - snakemake-pipeline
 - genomics
+platform: github
 account: brimittleman
 website: https://brimittleman.github.io/apaQTL/
 publications:

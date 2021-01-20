@@ -35,7 +35,27 @@
       <div>
         <p class="heading">
           <span class="icon">
-            <i class="fab fa-github"></i>
+            {{ if eq .Params.platform "github" }}
+              <i class="fab fa-github"></i>
+            {{ else }}
+              <i class="fas fa-code"></i>
+            {{ end }}
+          </span>
+        </p>
+        <p class="title is-5">
+          {{ if eq .Params.platform "github" }}
+          <a href="https://github.com/{{ .Params.account }}/{{ .Title }}" target="_blank">Repository</a>
+          {{ else }}
+          <a href="{{ .Params.website }}" target="_blank">Repository</a>
+          {{ end }}
+        </p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">
+          <span class="icon">
+            <i class="fas fa-globe"></i>
           </span>
         </p>
         <p class="title is-5">

@@ -5,6 +5,7 @@ description: A simple implementation of the variational Gaussian approximation f
 lastmod: '2020-10-23T14:34:21Z'
 title: vgapois
 topics: []
+platform: github
 account: pcarbo
 website: https://pcarbo.github.io/vgapois/
 ---

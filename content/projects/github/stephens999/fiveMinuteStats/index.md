@@ -4,6 +4,7 @@ description: A repo of short "vignettes" illustrating statistical concepts
 lastmod: '2021-01-12T15:45:37Z'
 title: fiveMinuteStats
 topics: []
+platform: github
 account: stephens999
 website: http://stephens999.github.io/fiveMinuteStats/
 ---

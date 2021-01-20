@@ -5,6 +5,7 @@ lastmod: '2019-10-21T15:26:19Z'
 title: singlecell-qtl
 topics:
 - single-cell
+platform: github
 account: jdblischak
 website: https://jdblischak.github.io/singlecell-qtl/
 publications:
