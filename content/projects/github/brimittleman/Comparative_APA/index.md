@@ -1,7 +1,7 @@
 ---
 date: '2019-09-02T20:59:11Z'
 description: Project for comparative APA- Start fall 2019
-lastmod: '2021-01-20T01:46:43Z'
+lastmod: '2021-01-22T21:54:00Z'
 title: Comparative_APA
 topics: []
 platform: github
