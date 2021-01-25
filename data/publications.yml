@@ -10,6 +10,9 @@ github:
       - 10.1101/gr.247759.118
     singlecell-qtl:
       - 10.1371/journal.pgen.1008045
+  pwh124:
+    sc-da-parkinsons:
+      - 10.1016/j.ajhg.2018.02.001
   stephenslab:
     gtexresults:
       - 10.1101/096552
