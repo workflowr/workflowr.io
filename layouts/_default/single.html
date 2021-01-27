@@ -14,6 +14,12 @@
       {{ .TableOfContents }}
     </div>
     <div class="column is-half">
+      {{ with .Lastmod }}
+        <p>
+          <strong>Last updated:</strong>
+          {{ .Format "2006-01-02" }}
+        </p>
+      {{ end }}
       {{ .Content }}
     </div>
   </div>

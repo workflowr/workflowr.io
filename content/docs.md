@@ -1,6 +1,7 @@
 ---
 title: Documentation
 description: How to use this site
+lastmod: 2021-01-27T12:00:00-05:00
 ---
 
 ## Search for projects
