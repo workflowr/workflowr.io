@@ -8,7 +8,21 @@
   {{ end }}
 
 {{ define "main" }}
-  <div class="columns is-centered content">
+  <div class="columns content">
+    <div class="column is-narrow">
+      <p>
+        <strong>Author:</strong>
+        <a href="{{ .Params.authorLink }}">{{ .Params.author }}</a>
+      </p>
+      <p>
+        <strong>Date:</strong>
+        {{ .Date.Format "2006-01-02" }}
+      </p>
+      {{ with .Params.toc }}
+        <h4 class="title is-4">Table of contents</h4>
+        {{ .TableOfContents }}
+      {{ end }}
+    </div>
     <div class="column is-half">
       {{ .Content }}
     </div>
