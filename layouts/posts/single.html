@@ -9,7 +9,7 @@
 
 {{ define "main" }}
   <div class="columns content">
-    <div class="column is-narrow">
+    <div class="column is-one-fifth">
       <p>
         <strong>Author:</strong>
         <a href="{{ .Params.authorLink }}">{{ .Params.author }}</a>
@@ -18,7 +18,7 @@
         <strong>Date:</strong>
         {{ .Date.Format "2006-01-02" }}
       </p>
-      {{ with .Params.toc }}
+      {{ if .Params.toc }}
         <h4 class="title is-4">Table of contents</h4>
         {{ .TableOfContents }}
       {{ end }}
