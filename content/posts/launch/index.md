@@ -1,6 +1,6 @@
 ---
 title: Launching workflowr.io
-date: 2021-01-27
+date: 2021-01-27T12:00:00-05:00
 author: John Blischak
 authorLink: https://jdblischak.com/
 description: "A central website for sharing reproducible research"
