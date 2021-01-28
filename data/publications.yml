@@ -5,6 +5,9 @@ github:
   brimittleman:
     apaQTL:
       - 10.7554/eLife.57492
+  davismcc:
+    fibroblast-clonality:
+      - 10.1038/s41592-020-0766-3
   jdblischak:
     fucci-seq:
       - 10.1101/gr.247759.118
