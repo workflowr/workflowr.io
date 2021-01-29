@@ -13,6 +13,9 @@ github:
       - 10.1101/gr.247759.118
     singlecell-qtl:
       - 10.1371/journal.pgen.1008045
+  Oshlack:
+    combes-organoid-paper:
+      - 10.1186/s13073-019-0615-0
   pwh124:
     sc-da-parkinsons:
       - 10.1016/j.ajhg.2018.02.001
