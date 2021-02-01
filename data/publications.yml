@@ -28,6 +28,9 @@ github:
     rss:
       - 10.1214/17-AOAS1046
       - 10.1038/s41467-018-06805-x
+  wolfemd:
+    PredictOutbredCrossVar:
+      - 10.1101/2021.01.05.425443
   xiangzhu:
     rss-gsea:
       - 10.1038/s41467-018-06805-x
