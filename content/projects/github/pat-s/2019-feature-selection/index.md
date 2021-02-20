@@ -1,7 +1,7 @@
 ---
 date: '2018-02-01T15:49:49Z'
 description: Research project
-lastmod: '2021-02-19T17:24:55Z'
+lastmod: '2021-02-19T20:11:32Z'
 title: 2019-feature-selection
 topics:
 - machine-learning

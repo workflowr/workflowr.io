@@ -19,6 +19,9 @@ github:
   Oshlack:
     combes-organoid-paper:
       - 10.1186/s13073-019-0615-0
+  pat-s:
+    pathogen-modeling:
+      - 10.1016/j.ecolmodel.2019.06.002
   pwh124:
     sc-da-parkinsons:
       - 10.1016/j.ajhg.2018.02.001
