@@ -47,6 +47,13 @@ of your query limited to workflowr.io.
 
 [DuckDuckGo]: https://duckduckgo.com/
 
+If you'd prefer to use a different search engine, you can use one of
+DuckDuckGo's convenient [bangs][]. For example, if you add `!g` to your search
+query, you will be taken to Google, and if you add `!b`, you will be taken to
+Bing.
+
+[bangs]: https://duckduckgo.com/bang
+
 ## Add a project
 
 ### Install GitHub App
