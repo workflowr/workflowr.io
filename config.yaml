@@ -6,6 +6,10 @@ taxonomies:
   topic: topics
 Paginate: 10
 
+privacy:
+  youtube:
+    privacyEnhanced: true
+
 params:
   description: Discover reproducible research projects
   images:
