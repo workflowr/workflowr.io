@@ -9,7 +9,7 @@
 {{ range (.Paginate (.Data.Pages.ByParam "year").Reverse).Pages }}
   <li>
     <a href="{{ .RelPermalink }}">{{.Params.author}} {{ .Params.year }}</a>
-    {{ .Params.title }}
+    {{ .Params.title | markdownify }}
   </li>
 {{ end }}
 </ul>
