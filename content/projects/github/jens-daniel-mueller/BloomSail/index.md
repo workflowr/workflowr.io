@@ -14,5 +14,7 @@ topics:
 platform: github
 account: jens-daniel-mueller
 website: https://jens-daniel-mueller.github.io/BloomSail/
+publications:
+- müller2021
 ---
 

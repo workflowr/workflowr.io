@@ -33,3 +33,9 @@ related:
     weight: 25
   - name: date
     weight: 25
+
+# To allow raw HTML in publication titles
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

@@ -170,6 +170,11 @@ for (i in seq_along(publications)) { # platforms
         dirPublicationTerm <- file.path(dirPublication, publicationIds[l])
         dir.create(dirPublicationTerm, showWarnings = FALSE, recursive = TRUE)
         filePublication <- file.path(dirPublicationTerm, "_index.md")
+        # Repair title that contains HTML
+        metadata[[l]][["title"]] <- gsub("&lt;", "<", metadata[[l]][["title"]])
+        metadata[[l]][["title"]] <- gsub("&gt;", ">", metadata[[l]][["title"]])
+        metadata[[l]][["citation"]] <- gsub("&lt;", "<", metadata[[l]][["citation"]])
+        metadata[[l]][["citation"]] <- gsub("&gt;", ">", metadata[[l]][["citation"]])
         wio::exportYamlHeader(metadata[[l]], filePublication)
       }
       fileProject <- file.path(dirContent, platform, account, repository, "index.md")

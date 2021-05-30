@@ -13,7 +13,7 @@
 {{ end }}
 <li{{ if eq .p1 .p2 }} class="is-active"{{ end }}>
   <a href="{{ .p1.RelPermalink }}" aria-current="page">
-    {{ if .p1.IsHome }} Home {{ else }} {{ .p1.Title }} {{ end }}
+    {{ if .p1.IsHome }} Home {{ else }} {{ .p1.Title | markdownify }} {{ end }}
   </a>
 </li>
 {{ end }}
