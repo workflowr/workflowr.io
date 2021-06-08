@@ -1,7 +1,7 @@
 ---
 date: '2015-06-14T14:23:27Z'
 description: A repo of short "vignettes" illustrating statistical concepts
-lastmod: '2021-05-26T13:36:20Z'
+lastmod: '2021-05-30T07:28:55Z'
 title: fiveMinuteStats
 topics: []
 platform: github

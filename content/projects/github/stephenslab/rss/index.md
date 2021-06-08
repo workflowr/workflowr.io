@@ -1,14 +1,17 @@
 ---
 date: '2015-09-28T22:49:45Z'
 description: Regression with Summary Statistics.
-lastmod: '2021-03-05T19:59:48Z'
+lastmod: '2021-06-07T16:17:34Z'
 title: rss
 topics:
-- genetics
 - bayesian-methods
 - gwas-summary-statistics
 - mcmc
 - variational-inference
+- heritability
+- genetic-associations
+- enrichment-analysis
+- gene-prioritization
 platform: github
 account: stephenslab
 website: https://stephenslab.github.io/rss/
