@@ -3,7 +3,7 @@ date: '2019-10-21T07:12:32Z'
 description: In this repository, you find code and explanations to quantify the net
   community production (NCP) during a cyanobacteria bloom in the Baltic Sea through
   vertically resolved pCO2 measurements.
-lastmod: '2021-05-18T11:57:52Z'
+lastmod: '2021-07-02T10:28:29Z'
 title: BloomSail
 topics:
 - oceanography
