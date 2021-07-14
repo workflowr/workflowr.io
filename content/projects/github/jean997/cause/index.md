@@ -1,7 +1,7 @@
 ---
 date: '2018-10-14T03:11:00Z'
 description: R package for CAUSE
-lastmod: '2020-11-30T00:14:43Z'
+lastmod: '2021-07-09T14:24:26Z'
 title: cause
 topics: []
 platform: github
