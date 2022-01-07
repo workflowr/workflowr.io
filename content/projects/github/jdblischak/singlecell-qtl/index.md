@@ -1,7 +1,8 @@
 ---
 date: '2017-08-09T17:18:38Z'
-description: The workflowr project singlecell-qtl by jdblischak
-lastmod: '2019-10-21T15:26:19Z'
+description: Discovery and characterization of variance QTLs in human induced pluripotent
+  stem cells
+lastmod: '2022-01-06T20:32:58Z'
 title: singlecell-qtl
 topics:
 - single-cell

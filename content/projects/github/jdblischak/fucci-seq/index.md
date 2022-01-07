@@ -1,7 +1,8 @@
 ---
 date: '2016-10-28T20:25:18Z'
-description: The workflowr project fucci-seq by jdblischak
-lastmod: '2020-10-03T15:45:47Z'
+description: Characterizing and inferring quantitative cell cycle phase in single-cell
+  RNA-seq data analysis
+lastmod: '2022-01-06T20:05:37Z'
 title: fucci-seq
 topics:
 - single-cell
