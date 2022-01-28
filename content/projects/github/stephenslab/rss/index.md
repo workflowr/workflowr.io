@@ -1,7 +1,7 @@
 ---
 date: '2015-09-28T22:49:45Z'
 description: Regression with Summary Statistics.
-lastmod: '2021-06-07T16:17:34Z'
+lastmod: '2022-01-24T16:57:11Z'
 title: rss
 topics:
 - bayesian-methods
