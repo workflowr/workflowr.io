@@ -14,5 +14,7 @@ topics:
 platform: github
 account: vanbuggenum
 website: https://vanbuggenum.github.io/QuRIE-seq_manuscript/
+publications:
+- rivello2021
 ---
 

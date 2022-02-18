@@ -43,6 +43,9 @@ github:
   tinalasisi:
     2020_HairPheno_manuscript:
       - 10.1101/2020.11.24.392191
+  vanbuggenum:
+    QuRIE-seq_manuscript:
+      - 10.1016/j.crmeth.2021.100070
   wolfemd:
     PredictOutbredCrossVar:
       - 10.1101/2021.01.05.425443
