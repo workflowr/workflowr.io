@@ -10,5 +10,7 @@ topics:
 platform: github
 account: philippbayer
 website: https://philippbayer.github.io/R_gene_analysis/
+publications:
+- bayer2021
 ---
 
