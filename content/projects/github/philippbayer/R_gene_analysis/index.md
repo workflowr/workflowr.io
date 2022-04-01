@@ -1,7 +1,7 @@
 ---
 date: '2020-09-18T07:42:07Z'
 description: Linking disease resistance gene numbers with yield in soybean
-lastmod: '2022-03-01T12:05:17Z'
+lastmod: '2022-04-01T05:46:30Z'
 title: R_gene_analysis
 topics:
 - analysis
