@@ -13,7 +13,7 @@ privacy:
 params:
   description: Discover reproducible research projects
   images:
-  - https://raw.githubusercontent.com/workflowr/workflowr-assets/master/img/workflowr-open-graph.png
+  - https://raw.githubusercontent.com/workflowr/workflowr-assets/main/img/workflowr-open-graph.png
   title: workflowr.io
 
 # Related content

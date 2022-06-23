@@ -24,7 +24,7 @@ analysis projects more organized, reproducible, and shareable. Most exciting for
 me was that this was the first time I was able to include [workflowr.io][] in a
 public presentation.
 
-[workflowr]: https://github.com/jdblischak/workflowr
+[workflowr]: https://github.com/workflowr/workflowr
 [workflowr.io]: https://workflowr.io
 
 {{< youtube id="RrcaGukYDyE" title="Facilitating reproducible and open research with workflowr and workflowr.io" >}}

@@ -142,7 +142,7 @@ include the URL in your published manuscript. By curating workflowr projects,
 workflowr.io makes it easier for other interested readers to find your
 reproducible results. In essence, it is promoting transparency and openness.
 
-[workflowr]: https://jdblischak.github.io/workflowr/
+[workflowr]: https://workflowr.github.io/workflowr/
 
 None of the workflowr projects are actually hosted on workflowr.io. Instead, it
 is a centralized directory of available projects to explore. The individual
@@ -215,9 +215,9 @@ you can read through the other [vignettes][]. For example, if you already have
 an existing project that you would like to migrate to use workflowr, read
 [Migrating an existing project to use workflowr][migrating].
 
-[getting-started]: https://jdblischak.github.io/workflowr/articles/wflow-01-getting-started.html
-[vignettes]: https://jdblischak.github.io/workflowr/articles/index.html
-[migrating]: https://jdblischak.github.io/workflowr/articles/wflow-03-migrating.html
+[getting-started]: https://workflowr.github.io/workflowr/articles/wflow-01-getting-started.html
+[vignettes]: https://workflowr.github.io/workflowr/articles/index.html
+[migrating]: https://workflowr.github.io/workflowr/articles/wflow-03-migrating.html
 
 ### Support for GitLab
 
@@ -227,4 +227,4 @@ workflowr also supports [hosting projects on GitLab][hosting-with-gitlab], we
 plan to add support for public repositories hosted on [GitLab][].
 
 [GitLab]: https://about.gitlab.com/
-[hosting-with-gitlab]: https://jdblischak.github.io/workflowr/articles/wflow-06-gitlab.html
+[hosting-with-gitlab]: https://workflowr.github.io/workflowr/articles/wflow-06-gitlab.html

@@ -16,7 +16,7 @@ directly, 2\) they see the URL in your published paper, or 3\) they happen to
 stumble across your GitHub/GitLab profile. I've long wanted to make it easier
 for others to discover your reproducible research projects.
 
-[workflowr]: https://github.com/jdblischak/workflowr
+[workflowr]: https://github.com/workflowr/workflowr
 
 Hence I created this site, [workflowr.io][], to be a central location for
 curating open science projects created with [workflowr][]. Adding your workflowr
