@@ -7,5 +7,7 @@ topics: []
 platform: github
 account: TheAcetoLab
 website: https://theacetolab.github.io/diamantopoulou-ctc-dynamics/
+publications:
+- diamantopoulou2022
 ---
 
