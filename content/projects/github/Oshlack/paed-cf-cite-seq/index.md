@@ -7,5 +7,7 @@ topics: []
 platform: github
 account: Oshlack
 website: https://oshlacklab.com/paed-cf-cite-seq/
+publications:
+- maksimovic2022
 ---
 
