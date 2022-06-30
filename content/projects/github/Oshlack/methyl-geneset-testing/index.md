@@ -7,5 +7,7 @@ topics: []
 platform: github
 account: Oshlack
 website: http://oshlacklab.com/methyl-geneset-testing/
+publications:
+- maksimovic2021
 ---
 
