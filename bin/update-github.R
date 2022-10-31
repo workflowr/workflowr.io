@@ -31,7 +31,15 @@ output <- vector(mode = "list", length = length(projects))
 for (i in seq_along(projects)) {
   p <- projects[[i]]
   message(paste(p$owner, p$repo, sep = "/"))
-  repository <- gh::gh("/repos/:owner/:repo", owner = p$owner, repo = p$repo)
+  repository <- try(
+    gh::gh("/repos/:owner/:repo", owner = p$owner, repo = p$repo)
+  )
+  if (inherits(repository, "try-error")) {
+    warning("Unable to access the (presumably private) repo: ",
+            paste(p$owner, p$repo, sep = "/"),
+            immediate. = TRUE)
+    next
+  }
 
   # Only include projects that have websites hosted on GitHub Pages
   if (repository[["has_pages"]]) {
