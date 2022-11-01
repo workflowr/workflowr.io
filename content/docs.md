@@ -150,7 +150,7 @@ project pages provide links to the website and source Git repository.
 
 ### Update frequency
 
-This site is updated every X hours. If you (un)install the GitHub app or make
+This site is updated every 24 hours. If you (un)install the GitHub app or make
 any changes to your project, please check back in a few hours to see the update
 take effect.
 

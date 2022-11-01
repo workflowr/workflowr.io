@@ -1,0 +1,57 @@
+name: update-github
+on:
+  schedule: # daily
+    - cron: "21 7 * * *"
+  push:
+    paths:
+      - '.github/workflows/update-github.yaml'
+      - 'data/publications.yml'
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash -l {0}
+jobs:
+  update-github:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          repository: workflowr/wio
+          path: wio
+      - name: Install Conda environment
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: wio/environment.yml.lock
+          environment-name: wior-lock
+          cache-env: true
+          cache-env-key: ${{ runner.os }}-${{ hashFiles('wio/environment.yml.lock') }}-0
+      - name: Install wio
+        run: R CMD INSTALL --build wio/
+      - name: Session information
+        run: |
+          conda list
+          Rscript -e "library('wio'); sessionInfo()"
+      - name: Update GitHub
+        env:
+          GH_APP_ID: ${{ secrets.GH_APP_ID }}
+          GH_APP_KEY: ${{ secrets.GH_APP_KEY }}
+          crossref_email: ${{ secrets.CROSSREF_EMAIL }}
+          TINY_API: ${{ secrets.TINY_API }}
+          GITHUB_PAT: ${{ github.token }}
+        run: Rscript bin/update-github.R
+      - name: Commit changes
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "runneradmin@github.com"
+          git status
+          git diff
+          git add content/*
+          git commit -m "Update GitHub" || exit 0
+          git push
+        # The default shell is for activating the conda env. This isn't
+        # needed to perform the Git operations, and it interferes with
+        # the trick above to only commit if there are changes
+        shell: bash
