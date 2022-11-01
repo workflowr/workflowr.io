@@ -1,7 +1,6 @@
 ---
-title: |-
-  Cyanobacteria net community production in the Baltic Sea as
-  inferred from proﬁling <i>p</i>CO<sub>2</sub> measurements
+title: Cyanobacteria net community production in the Baltic Sea as inferred from proﬁling
+  <i>p</i>CO<sub>2</sub> measurements
 year: 2021
 month: 3
 day: 1
