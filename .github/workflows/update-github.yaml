@@ -43,6 +43,7 @@ jobs:
           GITHUB_PAT: ${{ github.token }}
         run: Rscript bin/update-github.R
       - name: Commit changes
+        if: github.repository_owner == 'workflowr'
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "runneradmin@github.com"
