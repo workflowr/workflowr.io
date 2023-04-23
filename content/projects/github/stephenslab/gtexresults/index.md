@@ -2,7 +2,7 @@
 date: '2015-10-14T13:05:10Z'
 description: Code and data resources accompanying Urbut et al (2017), "Flexible statistical
   methods for estimating and testing effects in genomic studies with multiple conditions."
-lastmod: '2021-05-19T12:56:46Z'
+lastmod: '2023-04-22T23:16:02Z'
 title: gtexresults
 topics: []
 platform: github
