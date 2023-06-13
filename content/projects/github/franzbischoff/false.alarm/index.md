@@ -2,7 +2,7 @@
 date: '2020-05-05T16:51:02Z'
 description: PhD Programme in Health Data Science - detecting life-threatening ECG
   patterns using low-end devices
-lastmod: '2023-06-10T19:45:52Z'
+lastmod: '2023-06-12T11:24:50Z'
 title: false.alarm
 topics:
 - ecg
