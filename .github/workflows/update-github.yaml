@@ -24,12 +24,12 @@ jobs:
           repository: workflowr/wio
           path: wio
       - name: Install Conda environment
-        uses: mamba-org/provision-with-micromamba@main
+        uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: wio/environment.yml.lock
           environment-name: wior-lock
-          cache-env: true
-          cache-env-key: ${{ runner.os }}-${{ hashFiles('wio/environment.yml.lock') }}-0
+          cache-environment: true
+          cache-environment-key: ${{ runner.os }}-${{ hashFiles('wio/environment.yml.lock') }}-0
       - name: Install wio
         run: R CMD INSTALL --build wio/
       - name: Session information
