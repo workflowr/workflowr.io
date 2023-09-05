@@ -1,7 +1,7 @@
 ---
 date: '2019-08-23T22:58:56Z'
 description: Regression with Summary Statistics exploiting Network Topology.
-lastmod: '2021-06-07T14:33:28Z'
+lastmod: '2023-09-05T00:37:14Z'
 title: rss-net
 topics:
 - gwas-summary-statistics
