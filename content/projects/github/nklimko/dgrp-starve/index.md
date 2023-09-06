@@ -1,7 +1,7 @@
 ---
 date: '2022-10-25T20:52:27Z'
 description: Analysis of Starvation Resistance in Drosophila melanogaster
-lastmod: '2023-09-05T02:48:02Z'
+lastmod: '2023-09-05T17:54:52Z'
 title: dgrp-starve
 topics:
 - dgrp
