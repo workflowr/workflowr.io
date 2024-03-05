@@ -22,6 +22,9 @@ github:
   jens-daniel-mueller:
     BloomSail:
       - 10.5194/bg-2021-40
+  mward-lab:
+    Matthews_TOP2i_cardiotox_2023:
+      - 10.1371/journal.pgen.1011164
   Oshlack:
     combes-organoid-paper:
       - 10.1186/s13073-019-0615-0

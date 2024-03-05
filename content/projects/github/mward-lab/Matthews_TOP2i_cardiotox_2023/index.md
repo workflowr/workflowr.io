@@ -7,5 +7,7 @@ topics: []
 platform: github
 account: mward-lab
 website: https://mward-lab.github.io/Matthews_TOP2i_cardiotox_2023/
+publications:
+- matthews2024
 ---
 
