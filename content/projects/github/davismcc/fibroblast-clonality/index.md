@@ -13,6 +13,6 @@ platform: github
 account: davismcc
 website: https://davismcc.github.io/fibroblast-clonality/
 publications:
-- mccarthy2020
+- NA2020
 ---
 

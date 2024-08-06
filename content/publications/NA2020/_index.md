@@ -4,7 +4,7 @@ title: 'Cardelino: computational integration of somatic clonal substructure and 
 year: 2020
 month: 3
 day: 16
-author: McCarthy
+author: .na.character
 doi: 10.1038/s41592-020-0766-3
 citation: 'McCarthy DJ, Rostom R, Huang Y, Kunz DJ, Danecek P, Bonder MJ, Hagai T,
   Lyu R, Wang W, Gaffney DJ, Simons BD, Stegle O, Teichmann SA. Cardelino: computational
