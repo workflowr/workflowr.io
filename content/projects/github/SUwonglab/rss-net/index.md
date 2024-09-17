@@ -1,15 +1,10 @@
 ---
 date: '2019-08-23T22:58:56Z'
 description: Regression with Summary Statistics exploiting Network Topology.
-lastmod: '2024-01-02T16:25:12Z'
+lastmod: '2024-09-16T21:46:30Z'
 title: rss-net
 topics:
-- gwas-summary-statistics
-- gene-regulatory-network
-- bayesian-methods
-- variational-inference
-- gene-prioritization
-- enrichment-analysis
+- projects
 platform: github
 account: SUwonglab
 website: https://suwonglab.github.io/rss-net/
