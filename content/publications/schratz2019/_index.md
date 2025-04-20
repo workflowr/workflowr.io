@@ -3,7 +3,7 @@ title: Hyperparameter tuning and performance assessment of statistical and machi
   algorithms using spatial data
 year: 2019
 month: 6
-day: 19
+day: 20
 author: Schratz
 doi: 10.1016/j.ecolmodel.2019.06.002
 citation: 'Schratz P, Muenchow J, Iturritxa E, Richter J, Brenning A. Hyperparameter
