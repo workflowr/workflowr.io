@@ -24,7 +24,7 @@ jobs:
           repository: workflowr/wio
           path: wio
       - name: Install Conda environment
-        uses: mamba-org/setup-micromamba@v1
+        uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: wio/environment.yml.lock
           environment-name: wior-lock
