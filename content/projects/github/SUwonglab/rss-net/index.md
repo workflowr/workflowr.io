@@ -1,7 +1,7 @@
 ---
 date: '2019-08-23T22:58:56Z'
 description: 'RSS-NET: Regression with Summary Statistics exploiting Network Topology'
-lastmod: '2024-09-16T21:46:30Z'
+lastmod: '2025-04-23T04:14:10Z'
 title: rss-net
 topics:
 - projects
