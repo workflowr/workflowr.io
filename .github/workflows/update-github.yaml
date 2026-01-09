@@ -17,9 +17,9 @@ jobs:
       contents: write
     steps:
       - name: Checkout workflowr.io
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Checkout R package wio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           repository: workflowr/wio
           path: wio
@@ -45,7 +45,7 @@ jobs:
           GITHUB_PAT: ${{ github.token }}
         run: Rscript bin/update-github.R
       - name: Commit changes
-        if: github.repository_owner == 'workflowr'
+        if: github.repository_owner == 'workflowr' && github.ref == 'refs/heads/main'
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "runneradmin@github.com"
